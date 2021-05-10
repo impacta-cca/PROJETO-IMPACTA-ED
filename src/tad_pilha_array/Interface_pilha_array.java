@@ -33,12 +33,12 @@ public class Interface_pilha_array {
                     inserir = entrada.nextInt();
                     pilha.push(inserir);
 
-                    //chamar metodo do TAD para inserção com o parametro a variavel 'inserir'
+                    //chamar metodo push para adicionar na pilha o numero 'inserir'
                     break;
                 case 2: //remover
                     System.out.println("numero removido da pilha: "+pilha.pop());
 
-                    //chamar metodo do TAD para inserção com o parametro a variavel 'remover'
+                    //desempilha o item do topo da pilha e retorna ele no print
                     break;
                 case 3: //imprimir
                     System.out.println(pilha.toString());
@@ -46,6 +46,7 @@ public class Interface_pilha_array {
                     break;
                 case 4: //top
                     System.out.println("número que está no topo da pilha: "+pilha.top());
+                    //printa o item que está no topo da pilha
                     break;
             }
         }

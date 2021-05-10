@@ -1,23 +1,25 @@
-package tad_pilha_LSE;
+package tad_fila_LSE;
 
 import interfaces.Interface;
-import tad_pilha_array.ArrayStack;
+import tad_fila_array.ArrayQueue;
 
 import java.util.Scanner;
 
-public class Interface_pilha_LSE {
+public class Interface_fila_LSE {
     Interface opcoes = new Interface();
 
-    public void pilha() {
-        NodeStack<Integer> pilha = new NodeStack<Integer>();
+    public void fila() {
+       
+        NodeQueue<Integer> fila = new NodeQueue<Integer>();
+
         String[] funcionalidadesArranjo = {
                 "Sair",
                 "Inserir",
                 "Remover",
-                "Imprimir",
-                "consultar número no topo da pilha"
+                "Consultar",
 
         };
+
         boolean alternador = true;
         while (alternador) {
             Scanner entrada = new Scanner(System.in);
@@ -31,24 +33,18 @@ public class Interface_pilha_LSE {
                 case 1: // Inserir
                     System.out.println("Digite o numero que será inserido");
                     inserir = entrada.nextInt();
-                    pilha.push(inserir);
-
-                    //chamar metodo push para adicionar na pilha o numero 'inserir'
+                    fila.enqueue(inserir);
+                    // chama o metodo enqueue para enfileirar dentro da fila
                     break;
                 case 2: //remover
-                    System.out.println("numero removido da pilha: " + pilha.pop());
+                    System.out.println("o número que foi removido da fila é o " + fila.dequeue());
 
-                    //desempilha o item do topo da pilha e retorna ele no print
+                    //chama o metodo dequeue para retirar o primeiro numero da fila
                     break;
                 case 3: //imprimir
-                    System.out.println(pilha.toString());
+                    System.out.println(fila.toString());
                     // chamar metodo para imprimir importado do TAD
                     break;
-                case 4: //top
-                    System.out.println("número que está no topo da pilha: "+pilha.top());
-                    //printa o item que está no topo da pilha
-                    break;
-
             }
         }
     }
