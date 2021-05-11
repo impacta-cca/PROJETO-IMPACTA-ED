@@ -1,6 +1,7 @@
 package tad_fila_array;
 
 import interfaces.Interface;
+import tad_fila_array.classes.ArrayQueue;
 
 import java.util.Scanner;
 

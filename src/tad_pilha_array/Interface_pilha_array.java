@@ -1,7 +1,7 @@
 package tad_pilha_array;
 
 import interfaces.Interface;
-import tad_arranjo.ArrayIndexList;
+import tad_pilha_array.classes.ArrayStack;
 
 import java.util.Scanner;
 

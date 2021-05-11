@@ -1,7 +1,7 @@
 package tad_fila_LSE;
 
 import interfaces.Interface;
-import tad_fila_array.ArrayQueue;
+import tad_fila_LSE.classes.NodeQueue;
 
 import java.util.Scanner;
 

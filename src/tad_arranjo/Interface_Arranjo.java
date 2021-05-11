@@ -2,6 +2,7 @@ package tad_arranjo;
 
 import java.util.Scanner;
 import interfaces.*;
+import tad_arranjo.classes.ArrayIndexList;
 
 public class Interface_Arranjo {
     Interface opcoes = new Interface();

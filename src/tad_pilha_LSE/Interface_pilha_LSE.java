@@ -1,7 +1,7 @@
 package tad_pilha_LSE;
 
 import interfaces.Interface;
-import tad_pilha_array.ArrayStack;
+import tad_pilha_LSE.classes.NodeStack;
 
 import java.util.Scanner;
 
