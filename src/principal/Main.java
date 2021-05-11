@@ -1,11 +1,15 @@
 package principal;
 import interfaces.Interface;
 import  tad_arranjo.Interface_Arranjo;
+import tad_mapa.Interface_mapa;
 import tad_pilha_array.Interface_pilha_array;
 import tad_pilha_LSE.Interface_pilha_LSE;
 import tad_fila_array.Interface_fila_array;
 import tad_fila_LSE.Interface_fila_LSE;
 import tad_lista_de_nodos.Interface_lista_de_nodos;
+import tad_arvore_generica.Interface_arvore_generica;
+import tad_arvore_binaria.Interface_arvore_binaria;
+import tad_lista_prioridade.Interface_lista_prioridade;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,10 +25,10 @@ public class Main {
                 "TAD-Fila - Array", //OK
                 "TAD-Fila - LSE", //OK
                 "TAD-Lista de Nodos", // falta corrigir a remoção por busca
-                "TAD-Árvore Genérica",
-                "TAD-Árvore Binária",
-                "TAD-Fila de Prioridade",
-                "TAD-Mapa",
+                "TAD-Árvore Genérica", // OK , necessario definir como será inserido
+                "TAD-Árvore Binária", // OK, necessario inserir como será inserido
+                "TAD-Fila de Prioridade", //OK
+                "TAD-Mapa", //OK
                 "TAD-Dicionário",
                 "TAD-Mapa Ordenado – ABB",
                 "TAD-Mapa Ordenado – AVL",
@@ -38,6 +42,10 @@ public class Main {
         Interface_fila_array IFilaArray = new Interface_fila_array();
         Interface_fila_LSE IFilaLSE= new Interface_fila_LSE();
         Interface_lista_de_nodos IlistadeNodos = new Interface_lista_de_nodos();
+        Interface_arvore_generica IArvoreGenerica = new Interface_arvore_generica();
+        Interface_arvore_binaria IArvoreBinaria = new Interface_arvore_binaria();
+        Interface_lista_prioridade IListaPrioridade = new Interface_lista_prioridade();
+        Interface_mapa Imapa = new Interface_mapa();
         while (true) {
             int opcaoEscolhida = opcoes.menu(estruturas);
             switch (opcaoEscolhida) {
@@ -63,12 +71,16 @@ public class Main {
                     IlistadeNodos.listaNodos();
                     break;
                 case 7: // TAD-Árvore Genérica
+                    IArvoreGenerica.arvoreGenerica();
                     break;
                 case 8: // TAD-Árvore Binária
+                    IArvoreBinaria.arvoreBinaria();
                     break;
                 case 9: // TAD-Fila de Prioridade
+                    IListaPrioridade.listaPrioridade();
                     break;
                 case 10:   // TAD-Mapa
+                    Imapa.mapa();
                     break;
                 case 11: // TAD-Dicionário
                     break;
