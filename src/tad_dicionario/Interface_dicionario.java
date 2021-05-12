@@ -1,23 +1,24 @@
-package tad_arvore_binaria;
+package tad_dicionario;
 
 import interfaces.Interface;
-import tad_arvore_binaria.classes.LinkedBinaryTree;
+import tad_mapa.classes.HashTableMap;
+
 
 import java.util.Scanner;
 
-public class Interface_arvore_binaria {
+public class Interface_dicionario {
+
 
     Interface opcoes = new Interface();
 
-    public void arvoreBinaria(){
+    public void dicionario(){
 
-        LinkedBinaryTree<Integer> ArvoreBinaria = new LinkedBinaryTree<Integer>();
-
+        HashTableMap<Integer, Integer> Dicionario = new HashTableMap<Integer,Integer>();
         String[] funcionalidades = {
                 "Sair",
                 "Inserir",
                 "Remover",
-                "desenhar arvore",
+                "imprimir",
 
         };
 
@@ -26,36 +27,31 @@ public class Interface_arvore_binaria {
             Scanner entrada = new Scanner(System.in);
             int op = opcoes.menu(funcionalidades);
             int inserir = 0;
+            int key=0;
             switch (op) {
                 case 0: // Sair
                     alternador = false;
                     break;
                 case 1: // caso de inserção na arvore binaria( ainda necessário definir como será feita a inserção)
-                    System.out.println("Digite o numero que será inserido para a raiz da árvore? ");
+                    System.out.println("Digite o numero que será inserido no dicionario? ");
                     inserir = entrada.nextInt();
-                    if(ArvoreBinaria.isEmpty()){
-                        ArvoreBinaria.addRoot(inserir);
-                        System.out.println("O número "+inserir+" é raiz da árvore");
-                    }
-                    else{
 
+                    System.out.println("Digite a chave do número que será inserido no dicionario? ");
+                    key = entrada.nextInt();
 
-
-                    }
-
+                    Dicionario.put(key, inserir);
                     break;
                 case 2:
-                    System.out.println("Digite o numero que será removido: ");
+                    System.out.println("Digite a chave do numero que será removido: ");
                     int remover = entrada.nextInt();
-
+                    System.out.println("O número "+Dicionario.remove(remover)+" foi removido com sucesso");
                     break;
                 case 3: //imprimir
-                    System.out.println(ArvoreBinaria.toString());
+                    System.out.println(Dicionario.toString());
                     // chamar metodo para imprimir importado do TAD
                     break;
             }
         }
 
     }
-
 }

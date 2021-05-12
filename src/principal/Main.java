@@ -1,7 +1,10 @@
 package principal;
 import interfaces.Interface;
 import  tad_arranjo.Interface_Arranjo;
+import tad_dicionario.Interface_dicionario;
 import tad_mapa.Interface_mapa;
+import tad_mapa_ordenado_abb.Interface_mapa_ordenado_abb;
+import tad_mapa_ordenado_avl.Interface_mapa_avl;
 import tad_pilha_array.Interface_pilha_array;
 import tad_pilha_LSE.Interface_pilha_LSE;
 import tad_fila_array.Interface_fila_array;
@@ -29,9 +32,9 @@ public class Main {
                 "TAD-Árvore Binária", // OK, necessario inserir como será inserido
                 "TAD-Fila de Prioridade", //OK
                 "TAD-Mapa", //OK
-                "TAD-Dicionário",
-                "TAD-Mapa Ordenado – ABB",
-                "TAD-Mapa Ordenado – AVL",
+                "TAD-Dicionário", //OK
+                "TAD-Mapa Ordenado – ABB", //OK
+                "TAD-Mapa Ordenado – AVL", //OK
                 "TAD-Grafos"
         };
 
@@ -46,6 +49,9 @@ public class Main {
         Interface_arvore_binaria IArvoreBinaria = new Interface_arvore_binaria();
         Interface_lista_prioridade IListaPrioridade = new Interface_lista_prioridade();
         Interface_mapa Imapa = new Interface_mapa();
+        Interface_dicionario IDict = new Interface_dicionario();
+        Interface_mapa_ordenado_abb IMapaABB = new Interface_mapa_ordenado_abb();
+        Interface_mapa_avl IMapaAVl = new Interface_mapa_avl();
         while (true) {
             int opcaoEscolhida = opcoes.menu(estruturas);
             switch (opcaoEscolhida) {
@@ -83,10 +89,13 @@ public class Main {
                     Imapa.mapa();
                     break;
                 case 11: // TAD-Dicionário
+                    IDict.dicionario();
                     break;
                 case 12: // TAD-Mapa Ordenado – ABB
+                    IMapaABB.mapaOrdenadoABB();
                     break;
                 case 13: // TAD-Mapa Ordenado – AVL
+                    IMapaAVl.mapaOrdenadoAVL();
 
                     break;
                 case 14: // TAD-Grafos

@@ -13,6 +13,7 @@ package tad_arvore_generica.classes;
 import java.util.Arrays;
 import java.util.Iterator;
 
+import tad_arvore_binaria.classes.LinkedBinaryTree;
 import tad_arvore_generica.exception.*;
 import tad_arvore_generica.interfaces.*;
 
@@ -230,7 +231,7 @@ public class LinkedTree<E> implements Tree<E> {
 
 		// OU
 
-		for (Iterator<E> it = T.iterator(); it.hasNext();) {
+		for (Iterator<E> it = T.iterator(); it.hasNext(); ) {
 
 			s += ", " + it.next().toString();
 
@@ -249,31 +250,31 @@ public class LinkedTree<E> implements Tree<E> {
 	public String parentheticRepresentation(LinkedTree<E> T, Position<E> v) {
 		String s = v.element().toString(); // ação principal de visita
 		char tabs = '\t';
-		
+
 		if (T.isInternal(v)) {
 			Boolean firstTime = true;
 			for (Position<E> w : T.children(v)) {
 				if (firstTime) {
-					char[] taba = new char[(T.depth(T, w) )];
+					char[] taba = new char[(T.depth(T, w))];
 					Arrays.fill(taba, tabs);
 					String f = new String(taba);
 					// primeiro filho
 					s += "(\n" + f + parentheticRepresentation(T, w);
 					firstTime = false;
 				} else {
-					char[] taba = new char[(T.depth(T, w) )];
+					char[] taba = new char[(T.depth(T, w))];
 					Arrays.fill(taba, tabs);
 					String f = new String(taba);
 					// filhos seguintes
-					s += ",\n"+f+ parentheticRepresentation(T, w);
+					s += ",\n" + f + parentheticRepresentation(T, w);
 				}
-			
+
 			}
 			s += ")"; // fecha parênteses
 		}
 		return s;
 	}
-	
+
 	// depth
 	// ------------Ok!
 	public int depth(LinkedTree<E> T, Position<E> v) {
@@ -347,19 +348,18 @@ public class LinkedTree<E> implements Tree<E> {
 		System.out.println(v.element() + "Visitado");
 	}
 
-	// DiskSpace
-	// ------------Problema na Cria��o da Classe DiscNode!
-	public int diskSpace(LinkedTree<DiscNode> d, TreePosition<DiscNode> treePosition) {
-		int s = treePosition.element().getKbytes(); // inicia com o tamanho do pr�prio nodo
-		for (Position<DiscNode> w : treePosition.getChildren()) {
-			// acrescenta o espa�o ocupado pelos filhos de v calculado recursivamente
-			s += diskSpace(d, (TreePosition<DiscNode>) w);
-		}
-		if (d.isInternal(treePosition.element())) {
-			// imprime o nome e o espa�o ocupado em disco
-			System.out.println(treePosition.getElement().getName() + ": " + s);
-		}
-		return s;
-	}
+	// Busca valor na árvore genérica
+	public TreePosition<E> find(E valor, Position<E> v) {
+		// itera a lista dos filhos
+		if (v.element().equals(valor)) {
+			return checkPosition(v);
+		}else {
+			for (Position<E> w : this.children(v)) {
+				find(valor, w);
 
+			}
+		}
+		return null;
+	}
 }
+

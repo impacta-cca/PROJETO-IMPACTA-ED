@@ -1,11 +1,11 @@
-package tad_arvore_binaria.classes;
+package tad_mapa_ordenado_abb.classes;
 
 import java.util.Arrays;
 import java.util.Iterator;
 
-import tad_arvore_binaria.exception.*;
-import tad_arvore_binaria.interfaces.*;
 
+import tad_mapa_ordenado_abb.exception.*;
+import tad_mapa_ordenado_abb.interfaces.*;
 
 public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
@@ -185,7 +185,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 	}
 
-// Método de acesso adicional
+// M�todo de acesso adicional
 
 // Retorna o irm�o de um nodo
 
