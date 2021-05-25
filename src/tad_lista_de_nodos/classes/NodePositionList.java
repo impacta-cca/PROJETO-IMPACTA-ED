@@ -260,16 +260,19 @@ public class NodePositionList<E> implements PositionList<E> {
 	public Iterator<E> iterator() {
 		return new ElementIterator<E>(this);
 	}
-//corrigir a busca pela posicao
-	public Position<E>find(E v){
-		Position<E> aux = first();
-		while(!next(aux).equals(trailer)&&aux.element()!=null ){
+
+
+ // busca corrigida
+	public Position<E>find(Position<E> auxi,E v){
+		Position<E> aux = auxi;
 			if (aux.element()==v){
 				return aux;
 			}
-			aux = next(aux);
-		}
-		return null;
+			else {
+				aux = find(next(auxi),v);
+			}
+
+		return aux;
 	}
 
 	public String toString() {

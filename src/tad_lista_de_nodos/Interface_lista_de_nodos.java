@@ -94,7 +94,7 @@ public class Interface_lista_de_nodos {
                         // digitado pelo usuario, ira usar o metodo de remoção do lista nodo com ele, senão, ele passará para a proxima posição
                     System.out.println("Digite o numero que será removido: ");
                     int remover = entrada.nextInt();
-                    Position<Integer> posremover = listaNodos.find(remover);
+                    Position<Integer> posremover = listaNodos.find(listaNodos.first(), remover);
                     if(posremover.equals(null)){
                         System.out.println("numero não encontrado");
                     }

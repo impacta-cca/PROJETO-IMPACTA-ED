@@ -1,7 +1,6 @@
 package tad_arvore_generica;
 
 import interfaces.Interface;
-import tad_arvore_binaria.interfaces.TreePosition;
 import tad_arvore_generica.classes.LinkedTree;
 import java.util.Scanner;
 import tad_arvore_generica.classes.NodePositionList;
@@ -90,25 +89,34 @@ public class  Interface_arvore_generica {
                         System.out.println("Digite o numero que será inserido");
                         inserir = entrada.nextInt();
                         ArvoreGenerica.addRoot(inserir);
+                        TreeNode<Integer> raiz;
+                        raiz = (TreeNode<Integer>) ArvoreGenerica.root();
                         ArvoreGenerica.root().setChildren(new NodePositionList<Position<Integer>>());
-                        Iterable<Position<Integer>> filhos = ArvoreGenerica.children(ArvoreGenerica.root());
+
 
                         System.out.println("Qual será o filho da esquerda?");
                         int filho_esquerda = entrada.nextInt();
-                        criarFilho((TreeNode<Integer>) ArvoreGenerica.root(),filho_esquerda);
+                        criarFilho(raiz,filho_esquerda);
 
                         System.out.println("Qual será o filho da direita?");
                         int filho_direita = entrada.nextInt();
-                        criarFilho((TreeNode<Integer>) ArvoreGenerica.root(),filho_direita);
+                        criarFilho(raiz,filho_direita);
 
                         System.out.println("Root: "+ArvoreGenerica.root().getElement());
-                        System.out.println("filho da esquerda: "+ArvoreGenerica.root().getChildren().first().element().element());
-                        System.out.println("Filho da direita: "+ArvoreGenerica.root().getChildren().last().element().element());
+                        TreePosition<Integer>filhorootEsquerda = (TreePosition<Integer>)ArvoreGenerica.root().getChildren().first().element();
+                        filhorootEsquerda.setChildren(new NodePositionList<Position<Integer>>());
+
+                        TreePosition<Integer>filhorootdireita = (TreePosition<Integer>)ArvoreGenerica.root().getChildren().last().element();
+                        filhorootdireita.setChildren(new NodePositionList<Position<Integer>>());
+                        System.out.println("filho da esquerda: "+filhorootEsquerda.element());
+                        System.out.println("Filho da direita: "+filhorootdireita.element());
                     }
                     else{
                         System.out.println("Qual o número que você procura na árvore? ");
                         inserir = entrada.nextInt();
+
                         TreeNode<Integer> aux = (TreeNode<Integer>) ArvoreGenerica.find(inserir, ArvoreGenerica.root());
+                        System.out.println(aux.element());
 
 
 
@@ -120,6 +128,12 @@ public class  Interface_arvore_generica {
                         int filho_direita = entrada.nextInt();
                         criarFilho(aux,filho_direita);
 
+                        TreePosition<Integer>filhoEsquerda= (TreePosition<Integer>) aux.getChildren().first().element();
+                        filhoEsquerda.setChildren(new NodePositionList<Position<Integer>>());
+                        System.out.println(filhoEsquerda.getElement());
+                        TreePosition<Integer> filhodireita = (TreePosition<Integer>) aux.getChildren().last().element();
+                        System.out.println(filhodireita.getElement());
+                        filhodireita.setChildren(new NodePositionList<Position<Integer>>());
                         System.out.println(ArvoreGenerica.parentheticRepresentation(ArvoreGenerica, ArvoreGenerica.root()));
 
                     }

@@ -350,16 +350,23 @@ public class LinkedTree<E> implements Tree<E> {
 
 	// Busca valor na árvore genérica
 	public TreePosition<E> find(E valor, Position<E> v) {
+		TreePosition<E> retornar = null;
+		TreeNode<E> vnode= (TreeNode<E>) checkPosition(v);
 		// itera a lista dos filhos
-		if (v.element().equals(valor)) {
-			return checkPosition(v);
-		}else {
+		if (vnode.element().equals(valor)) {
+			retornar= checkPosition(v);
+		}else if(vnode.getChildren().first().element().element().equals(valor)) {
+			retornar = checkPosition(vnode.getChildren().first().element());
+		}else if(vnode.getChildren().last().element().element().equals(valor)) {
+			retornar = checkPosition(vnode.getChildren().last().element());
+		}else{
 			for (Position<E> w : this.children(v)) {
-				find(valor, w);
+				retornar = find(valor, w);
 
 			}
 		}
-		return null;
+
+		return retornar;
 	}
 }
 
