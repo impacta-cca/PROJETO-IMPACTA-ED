@@ -22,6 +22,51 @@ public class Interface_lista_de_nodos {
 
         };
 
+
+        System.out.println("Apresentação:\n" +
+                        "A lista de nodos é um TAD que lhe concede uma forma alternativa aos índices de se referenciar a\n" +
+                        "posições de elementos em uma lista, possuindo duas maneiras de ser implementada: Lista simplesmente\n" +
+                        "encadeada (LSE), lista duplamente encadeada (LDE). Sendo assim, podemos dizer que uma Lista de Nodos\n" +
+                        "é basicamente uma lista de posições.\n" +
+                        "\n" +
+                        "Como funciona ?\n" +
+                        "Suas posições são definidas de forma lógica, ou seja, são dinâmicas como variáveis. Os nodos não\n" +
+                        "conhecem posição 0, 1, 2, 3, etc; nodos conhecem apenas quem são seus “vizinhos” aos quais estão\n" +
+                        "ligados (quem está à esquerda, quem está à direita), por isso dizemos ser uma lista encadeada.\n" +
+                        "Cada nodo armazena o endereço de posição do nodo anterior e/ou posterior a si, a partir de um\n" +
+                        "indicador que chamamos de ponteiro, e é assim que se percorre esse tipo de lista.\n" +
+                        "\n" +
+                        "O que ela pode fazer ?\n" +
+                        "Esse tipo de lista de permite: saber seu tamanho (quantidade de elementos armazenados), saber se\n" +
+                        "está vazia, saber qual o primeiro e qual o último elemento da lista, saber qual é o elemento\n" +
+                        "anterior e posterior de determinado nodo, mudar o valor contido em um nodo, remover e elemento,\n" +
+                        "inserir elemento no: começo, final, antes de e elemento, depois de e elemento.\n" +
+                        "\n" +
+                        "Como faz cada função ?\n" +
+                        "- first: retorna o valor armazenado do primeiro elemento da lista. Uma exceção é lançada se a lista estiver\n" +
+                        "vazia.\n" +
+                        "\n" +
+                        "- last: retorna o valor armazenado do último elemento da lista. Uma exceção é lançada se a lista estiver\n" +
+                        "vazia.\n" +
+                        "\n" +
+                        "- prev: retorna a posição do elemento que precede determinado nodo da lista. Uma exceção é lançada\n" +
+                        "se o nodo informado for o elemento da primeira posição.\n" +
+                        "\n" +
+                        "- next: retorna a posição do elemento posterior a determinado nodo da lista. Uma exceção é lançada\n" +
+                        "se o nodo informado for o elemento da última posição.\n" +
+                        "\n" +
+                        "- set: substitui o valor armazenado em determinada posição, retornando o valor antigo.\n" +
+                        "\n" +
+                        "- addFirst: insere um novo elemento na primeira posição da lista.\n" +
+                        "\n" +
+                        "- addLast: insere um novo elemento na última posição da lista.\n" +
+                        "\n" +
+                        "- addBefore: insere um novo elemento antes de determinada posição da lista.\n" +
+                        "\n" +
+                        "- addAfter: insere um novo elemento depois de determinada posição da lista.\n" +
+                        "\n" +
+                        "- remove: remove e retorna o elemento de determinada posição da lista, invalidando esta posição.\n");
+
         boolean alternador = true;
         while (alternador) {
             Scanner entrada = new Scanner(System.in);

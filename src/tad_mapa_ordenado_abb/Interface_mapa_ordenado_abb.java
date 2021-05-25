@@ -21,6 +21,41 @@ public class Interface_mapa_ordenado_abb {
 
         };
 
+        System.out.println("Apresentação:\n" +
+                "Este tipo é baseado no TAD Mapa comum, seu diferencial é que é organizado estrategicamente a favor\n" +
+                "de uma pesquisa mais eficiente por seus elementos. Esse tipo de árvore é binária completa, então cada\n" +
+                "elemento terá de possuir estritamente 0 ou 2 filhos, utilizando um “placeholder” se necessário." +
+                "\n" +
+                "Como funciona ?\n" +
+                "As entradas são controladas de forma a organizar automaticamente a árvore: a partir da raiz (primeiro\n" +
+                "elemento inserido), compara-se os elementos adicionados posteriormente utilizando a pergunta “é maior\n" +
+                "ou menor?”. Se for maior, o elemento é alocado como filho à direita, se for menor, à esquerda. Caso se\n" +
+                "depare com um elemento que já tem um filho onde deseja inserir, aplica-se a mesma pergunta, a partir\n" +
+                "do valor desse filho existente, sucessivamente. Tendo a árvore organizada desta forma, para a pesquisa\n" +
+                "utilizamos a mesma lógica: “o valor buscado é maior ou menor que [...]?” a partir dos valores percorridos\n" +
+                "na árvore, desta forma dividimos pela metade o esforço para encontrar o elemento desejado.\n" +
+                "\n" +
+                "O que ela pode fazer ?\n" +
+                "Este tipo lhe permite: inserir e remover elementos, saber o tamanho da árvore, obter uma lista de todos\n" +
+                "os elementos existentes na árvore, obter uma lista de todas as entradas par chave-valor inseridas na\n" +
+                "árvore, visualizar o desenho do andamento da árvore.\n" +
+                "\n" +
+                "Como faz cada função ?\n" +
+                "- size : retorna o número de elementos na árvore.\n" +
+                "\n" +
+                "- put : insere um elemento na árvore aplicando a lógica > ou <.\n" +
+                "\n" +
+                "- remove : remove e retorna um elemento da árvore e realoca os elementos para preencher o espaço vazio.\n" +
+                "\n" +
+                "- keySet: retorna uma coleção iterável de todas as chaves existentes na árvore.\n" +
+                "\n" +
+                "- values: retorna uma coleção de todos os valores armazenados nas entradas existentes da árvore.\n" +
+                "\n" +
+                "- entrySets: retorna uma coleção de todas as entradas par chave-valor existentes na árvore.\n" +
+                "\n" +
+                "- printExpression : desenha de forma parentizada a expressão da árvore.\n" +
+                "\n");
+
         boolean alternador = true;
         while (alternador) {
             Scanner entrada = new Scanner(System.in);

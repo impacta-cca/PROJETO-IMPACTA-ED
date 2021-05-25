@@ -9,7 +9,7 @@ import tad_arvore_generica.classes.NodePositionList;
 import tad_arvore_generica.classes.TreeNode;
 import tad_arvore_generica.interfaces.*;
 
-public class Interface_arvore_generica {
+public class  Interface_arvore_generica {
     Interface opcoes = new Interface();
 
     public void arvoreGenerica(){
@@ -24,6 +24,56 @@ public class Interface_arvore_generica {
                 "Consultar nodo"
 
         };
+
+        System.out.println("Apresentação:\n" +
+                "É o tipo mais genérico quando se trata da gama de TAD árvore, pois permite mais controle e\n" +
+                "flexibilidade ao usuário em sua utilização. O nome que lhe foi dado está de acordo tanto com sua\n" +
+                "aparência (pois quando desenhado á mão, pode-se notar que esta estrutura parece de fato uma árvore,\n" +
+                "porém, de ponta-cabeça, sendo o topo a raiz, suas bifurcações os galhos, e os elementos mais\n" +
+                "externos as folhas da árvore), quanto por seu modo de organização (que tem como grande\n" +
+                "referência uma árvore genealógica).\n" +
+                "\n" +
+                "Como funciona ?\n" +
+                "Diferente das listas, este é um tipo não linear e possui uma forma mais natural de organizar os\n" +
+                "dados, indo além de “antes” e “depois”; ele possui relacionamentos hierárquicos, pois é definido em\n" +
+                "nodos que ganham título de “pai”, “filho” e/ou “irmão (da esquerda ou da direita)” como metáfora,\n" +
+                "deixando mais fácil de entender e visualizar sua estrutura. À título de informação, a raiz é o\n" +
+                "elemento que estará no topo da hierarquia, pois será o “pai de todos”, e suas sub-árvores seguem\n" +
+                "este mesmo padrão, em níveis mais baixos.\n" +
+                "\n" +
+                "O que ela pode fazer ?\n" +
+                "O tipo árvore nos permite: armazenar elementos em posições como as de uma\n" +
+                "lista, saber o valor armazenado em uma posição da árvore, retornar um iterador e um iterável de\n" +
+                "nodos da árvore, substituir o valor armazenado em determinado elemento, retornando o valor antigo.\n" +
+                "Saber: quem é sua raiz; quem é o pai de um elemento; quem é(são) o(s) filho(s) de um elemento; se\n" +
+                "determinado elemento é interno, externo ou raíz; a quantidade de elementos armazenados na árvore;\n" +
+                "se está vazia.\n" +
+                "\n" +
+                "Como faz cada função ?\n" +
+                "- element: retorna o elemento armazenado nesta posição.\n" +
+                "\n" +
+                "- root: retorna a raiz da árvore; uma exceção é lançada se a árvore estiver vazia.\n" +
+                "\n" +
+                "- parent: retorna o nodo pai de um elemento; uma exceção é lançada se este elemento for a raiz.\n" +
+                "\n" +
+                "- children: retorna uma coleção iterável contendo os filhos de um nodo.\n" +
+                "\n" +
+                "- isInternal: indica se um nodo é ou não é interno.\n" +
+                "\n" +
+                "- isExternal: indica se um nodo é ou não é externo.\n" +
+                "\n" +
+                "- isRoot: indica se um nodo é ou não é a raiz.\n" +
+                "\n" +
+                "- size: retorna o número de nodos na árvore.\n" +
+                "\n" +
+                "- isEmpty: indica se a árvore está ou não está vazia.\n" +
+                "\n" +
+                "- iterator: retorna um iterador de todos os elementos armazenados nos nodos da árvore.\n" +
+                "\n" +
+                "- positions: retorna uma coleção iterável com todos os nodos da árvore.\n" +
+                "\n" +
+                "- replace: substitui o valor de um determinado elemento e retorna o valor antigo.\n");
+
 
         boolean alternador = true;
         while (alternador) {
@@ -103,13 +153,12 @@ public class Interface_arvore_generica {
 
     private TreeNode<Integer> criarFilho(TreeNode<Integer> p, int n) {
 
-        PositionList<Position<Integer>> filhos;
+        PositionList<Position<Integer>> filhos = p.getChildren();
 
         TreeNode<Integer> aux;
 
         // Obt�m os Filhos de p
-
-        filhos = p.getChildren();
+        
 
         // Cria um novo filho
 
