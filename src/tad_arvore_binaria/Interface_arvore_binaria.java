@@ -103,9 +103,16 @@ public class Interface_arvore_binaria {
 
                     break;
                 case 2:
+
                     System.out.println("Digite o numero que será removido: ");
                     int remover = entrada.nextInt();
-
+                    Position<Integer> encontrado = ArvoreBinaria.findbinaria(remover, ArvoreBinaria.root(), ArvoreBinaria);
+                    if(encontrado==null){
+                        System.out.println("número não encontrado");
+                    }
+                    else {
+                        System.out.println("Número: " + ArvoreBinaria.remove(encontrado) + " removido com sucesso");
+                    }
                     break;
                 case 3: //imprimir
                     ArvoreBinaria.desenhaArvore(ArvoreBinaria, ArvoreBinaria.root(), 0,0);

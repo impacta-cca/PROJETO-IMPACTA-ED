@@ -410,7 +410,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
 		// OU
 
-		for (Iterator<E> it = T.iterator(); it.hasNext();) {
+		for (Iterator<E> it = T.iterator(); it.hasNext(); ) {
 
 			s += ", " + it.next().toString();
 
@@ -463,17 +463,17 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 			Double x = evaluateExpression(T, T.left(v));
 			Double y = evaluateExpression(T, T.right(v));
 			switch (T.checkPosition(v).element().toString()) {
-			case "+":
-				return f = x + y;
+				case "+":
+					return f = x + y;
 
-			case "-":
-				return f = x - y;
+				case "-":
+					return f = x - y;
 
-			case "/":
-				return f = x / y;
+				case "/":
+					return f = x / y;
 
-			case "*":
-				return f = x * y;
+				case "*":
+					return f = x * y;
 			}
 
 		}
@@ -674,30 +674,47 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 	}
 
 
-	public void inserirnaArvore(int valor, Position<Integer> v,LinkedBinaryTree<Integer> arvore){
+	public void inserirnaArvore(int valor, Position<Integer> v, LinkedBinaryTree<Integer> arvore) {
 		if (!arvore.checkPosition(v).equals(null)) {
 
 			if (valor < arvore.checkPosition(v).element()) {
-				if(arvore.hasLeft(v)) {
+				if (arvore.hasLeft(v)) {
 					inserirnaArvore(valor, arvore.left(v), arvore);
-				}
-				else{
-					arvore.insertLeft(v,valor);
+				} else {
+					arvore.insertLeft(v, valor);
 				}
 
-			}
-			else if(valor>=arvore.checkPosition(v).element()){
-				if(arvore.hasRight(v)) {
+			} else if (valor >= arvore.checkPosition(v).element()) {
+				if (arvore.hasRight(v)) {
 					inserirnaArvore(valor, arvore.right(v), arvore);
-				}
-				else{
-					arvore.insertRight(v,valor);
+				} else {
+					arvore.insertRight(v, valor);
 				}
 			}
-		}
-		else if(arvore.checkPosition(v).equals(null)){
+		} else if (arvore.checkPosition(v).equals(null)) {
 			arvore.checkPosition(v).setElement(valor);
 		}
 	}
+
+	public Position<Integer> findbinaria(int valor, Position<Integer> v, LinkedBinaryTree<Integer> arvore) {
+		Position<Integer> finalp = null;
+
+		if (valor == arvore.checkPosition(v).element()) {
+			finalp=v;
+		}
+		else if (valor < arvore.checkPosition(v).element()) {
+			finalp=findbinaria(valor, arvore.left(v), arvore);
+		}
+
+		else if (valor >= arvore.checkPosition(v).element()) {
+			if (arvore.hasRight(v)) {
+			finalp=findbinaria(valor, arvore.right(v), arvore);
+			}
+
+		}
+		return finalp;
+	}
+
+
 
 }
