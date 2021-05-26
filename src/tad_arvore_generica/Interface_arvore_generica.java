@@ -17,7 +17,7 @@ public class  Interface_arvore_generica {
 
         String[] funcionalidadesArranjo = {
                 "Sair",
-                "Inserir",
+                "criar arvore de exemplo",
                 "Remover",
                 "desenhar arvore",
                 "Consultar nodo"
@@ -79,65 +79,15 @@ public class  Interface_arvore_generica {
             Scanner entrada = new Scanner(System.in);
             int op = opcoes.menu(funcionalidadesArranjo);
             int inserir = 0;
+            String [ ]lista;
             switch (op) {
                 case 0: // Sair
                     alternador = false;
                     break;
                 case 1: // caso de inserção na lista de nodos
+                    ArvoreGenerica = criarArvoreExemplo();
+                    System.out.println(ArvoreGenerica.parentheticRepresentation(ArvoreGenerica, ArvoreGenerica.root()));
 
-                    if(ArvoreGenerica.isEmpty()){
-                        System.out.println("Digite o numero que será inserido");
-                        inserir = entrada.nextInt();
-                        ArvoreGenerica.addRoot(inserir);
-                        TreeNode<Integer> raiz;
-                        raiz = (TreeNode<Integer>) ArvoreGenerica.root();
-                        ArvoreGenerica.root().setChildren(new NodePositionList<Position<Integer>>());
-
-
-                        System.out.println("Qual será o filho da esquerda?");
-                        int filho_esquerda = entrada.nextInt();
-                        criarFilho(raiz,filho_esquerda);
-
-                        System.out.println("Qual será o filho da direita?");
-                        int filho_direita = entrada.nextInt();
-                        criarFilho(raiz,filho_direita);
-
-                        System.out.println("Root: "+ArvoreGenerica.root().getElement());
-                        TreePosition<Integer>filhorootEsquerda = (TreePosition<Integer>)ArvoreGenerica.root().getChildren().first().element();
-                        filhorootEsquerda.setChildren(new NodePositionList<Position<Integer>>());
-
-                        TreePosition<Integer>filhorootdireita = (TreePosition<Integer>)ArvoreGenerica.root().getChildren().last().element();
-                        filhorootdireita.setChildren(new NodePositionList<Position<Integer>>());
-                        System.out.println("filho da esquerda: "+filhorootEsquerda.element());
-                        System.out.println("Filho da direita: "+filhorootdireita.element());
-                    }
-                    else{
-                        System.out.println("Qual o número que você procura na árvore? ");
-                        inserir = entrada.nextInt();
-
-                        TreeNode<Integer> aux = (TreeNode<Integer>) ArvoreGenerica.find(inserir, ArvoreGenerica.root());
-                        System.out.println(aux.element());
-
-
-
-                        System.out.println("Qual será o filho da esquerda?");
-                        int filho_esquerda = entrada.nextInt();
-                        criarFilho(aux,filho_esquerda);
-
-                        System.out.println("Qual será o filho da direita?");
-                        int filho_direita = entrada.nextInt();
-                        criarFilho(aux,filho_direita);
-
-                        TreePosition<Integer>filhoEsquerda= (TreePosition<Integer>) aux.getChildren().first().element();
-                        filhoEsquerda.setChildren(new NodePositionList<Position<Integer>>());
-                        System.out.println(filhoEsquerda.getElement());
-                        TreePosition<Integer> filhodireita = (TreePosition<Integer>) aux.getChildren().last().element();
-                        System.out.println(filhodireita.getElement());
-                        filhodireita.setChildren(new NodePositionList<Position<Integer>>());
-                        System.out.println(ArvoreGenerica.parentheticRepresentation(ArvoreGenerica, ArvoreGenerica.root()));
-
-                    }
-                    // caso a lista esteja vazia, é inserido na primeira posição o número digitado pelo usuário
 
                     break;
                 case 2: // cria uma Position remover que recebera  a primeira posição da lista de nodos e caso o elemento dele seja igual a o numero
@@ -189,5 +139,32 @@ public class  Interface_arvore_generica {
         return aux;
 
     }
+
+    private LinkedTree<Integer> criarArvoreExemplo(){
+
+        LinkedTree<Integer> TreeExemplo = new LinkedTree<Integer>();
+        TreeNode<Integer> raiz,feraiz,fdraiz, fferaiz,ffdraiz;
+        TreeExemplo.addRoot(1);
+        raiz =(TreeNode<Integer>) TreeExemplo.root();
+        raiz.setChildren(new NodePositionList<Position<Integer>>());
+        feraiz = criarFilho(raiz , 2);
+        fdraiz = criarFilho(raiz,3);
+        fferaiz = criarFilho(feraiz,4);
+        ffdraiz= criarFilho(feraiz,5);
+
+        criarFilho(fdraiz,6);
+        criarFilho(fdraiz,7);
+
+        criarFilho(fferaiz,8);
+        criarFilho(fferaiz,9);
+        criarFilho(ffdraiz,10);
+        criarFilho(ffdraiz,11);
+
+        return  TreeExemplo;
+    }
+
+
+
+
 
 }

@@ -2,6 +2,7 @@ package tad_arvore_binaria;
 
 import interfaces.Interface;
 import tad_arvore_binaria.classes.LinkedBinaryTree;
+import tad_arvore_binaria.interfaces.Position;
 
 import java.util.Scanner;
 
@@ -93,6 +94,8 @@ public class Interface_arvore_binaria {
                         System.out.println("O número "+inserir+" é raiz da árvore");
                     }
                     else{
+                        ArvoreBinaria.inserirnaArvore(inserir, ArvoreBinaria.root(), ArvoreBinaria);
+
 
 
 
@@ -105,12 +108,21 @@ public class Interface_arvore_binaria {
 
                     break;
                 case 3: //imprimir
-                    System.out.println(ArvoreBinaria.toString());
+                    ArvoreBinaria.desenhaArvore(ArvoreBinaria, ArvoreBinaria.root(), 0,0);
                     // chamar metodo para imprimir importado do TAD
                     break;
             }
+
+
+
+
+
+
+
         }
 
     }
+
+
 
 }

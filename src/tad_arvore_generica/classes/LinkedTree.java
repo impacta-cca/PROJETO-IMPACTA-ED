@@ -360,7 +360,7 @@ public class LinkedTree<E> implements Tree<E> {
 		}else if(vnode.getChildren().last().element().element().equals(valor)) {
 			retornar = checkPosition(vnode.getChildren().last().element());
 		}else{
-			for (Position<E> w : this.children(v)) {
+			for (Position<E> w : vnode.getChildren()) {
 				retornar = find(valor, w);
 
 			}

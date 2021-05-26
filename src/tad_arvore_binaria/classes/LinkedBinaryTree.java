@@ -673,4 +673,31 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		return h;
 	}
 
+
+	public void inserirnaArvore(int valor, Position<Integer> v,LinkedBinaryTree<Integer> arvore){
+		if (!arvore.checkPosition(v).equals(null)) {
+
+			if (valor < arvore.checkPosition(v).element()) {
+				if(arvore.hasLeft(v)) {
+					inserirnaArvore(valor, arvore.left(v), arvore);
+				}
+				else{
+					arvore.insertLeft(v,valor);
+				}
+
+			}
+			else if(valor>=arvore.checkPosition(v).element()){
+				if(arvore.hasRight(v)) {
+					inserirnaArvore(valor, arvore.right(v), arvore);
+				}
+				else{
+					arvore.insertRight(v,valor);
+				}
+			}
+		}
+		else if(arvore.checkPosition(v).equals(null)){
+			arvore.checkPosition(v).setElement(valor);
+		}
+	}
+
 }
