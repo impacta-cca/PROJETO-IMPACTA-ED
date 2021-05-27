@@ -18,9 +18,7 @@ public class  Interface_arvore_generica {
         String[] funcionalidadesArranjo = {
                 "Sair",
                 "criar arvore de exemplo",
-                "Remover",
                 "desenhar arvore",
-                "Consultar nodo"
 
         };
 
@@ -87,28 +85,12 @@ public class  Interface_arvore_generica {
                 case 1: // caso de inserção na lista de nodos
                     ArvoreGenerica = criarArvoreExemplo();
                     System.out.println(ArvoreGenerica.parentheticRepresentation(ArvoreGenerica, ArvoreGenerica.root()));
-
-
                     break;
-                case 2: // cria uma Position remover que recebera  a primeira posição da lista de nodos e caso o elemento dele seja igual a o numero
-                    // digitado pelo usuario, ira usar o metodo de remoção do lista nodo com ele, senão, ele passará para a proxima posição
-                    System.out.println("Digite o numero que será removido: ");
-                    int remover = entrada.nextInt();
-
-                    break;
-                case 3: //imprimir
-                    System.out.println(ArvoreGenerica.toString());
-                    ArvoreGenerica.postorder(ArvoreGenerica, ArvoreGenerica.root());
+                case 2: //imprimir
+                    System.out.println(ArvoreGenerica.parentheticRepresentation(ArvoreGenerica, ArvoreGenerica.root()));
                     // chamar metodo para imprimir importado do TAD
                     break;
 
-                case 4:
-                    System.out.println("Qual o número que você procura na árvore? ");
-                    inserir = entrada.nextInt();
-                    TreeNode<Integer> aux = (TreeNode<Integer>) ArvoreGenerica.find(inserir, ArvoreGenerica.root());
-                    System.out.println("O nodo encontrado "+aux.element()+"\nfilho da esquerda "+aux.getChildren().first().element().element()+
-                                        "\nfilho da direita "+aux.getChildren().last().element().element());
-                    break;
             }
         }
 

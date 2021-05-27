@@ -329,6 +329,7 @@ public class LinkedTree<E> implements Tree<E> {
 		 * uma String.
 		 */
 		String teste = "";
+
 		for (Position<E> w : T.children(v)) {
 			teste += toStringpostorder(T, w) + "\n";
 		}
@@ -345,10 +346,8 @@ public class LinkedTree<E> implements Tree<E> {
 		for (Position<E> w : T.children(v)) {
 			postorder(T, w);
 		}
-		System.out.println(v.element() + "Visitado");
+		System.out.println(v.element() + " Visitado");
 	}
-
-	// Busca valor na árvore genérica
 
 }
 
