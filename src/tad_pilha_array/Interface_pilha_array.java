@@ -5,6 +5,8 @@ import tad_pilha_array.classes.ArrayStack;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_pilha_array {
     Interface opcoes = new Interface();
 
@@ -14,12 +16,22 @@ public class Interface_pilha_array {
                 "Sair",
                 "Inserir",
                 "Remover",
-                "imprimir",
-                "consultar número no topo da pilha"
+                "Imprimir",
+                "Consultar número no topo da pilha"
 
         };
 
-        System.out.println("Apresentação:\n" +
+
+        // Exibe título
+        titulo2("██████  ██ ██      ██   ██  █████       ██  █████  ██████  ██████   █████  ██    ██ ██  \n" +
+                "██   ██ ██ ██      ██   ██ ██   ██     ██  ██   ██ ██   ██ ██   ██ ██   ██  ██  ██   ██ \n" +
+                "██████  ██ ██      ███████ ███████     ██  ███████ ██████  ██████  ███████   ████    ██ \n" +
+                "██      ██ ██      ██   ██ ██   ██     ██  ██   ██ ██   ██ ██   ██ ██   ██    ██     ██ \n" +
+                "██      ██ ███████ ██   ██ ██   ██      ██ ██   ██ ██   ██ ██   ██ ██   ██    ██    ██  ");
+
+
+        // Explicação da estrutura
+        System.out.println("O que é:\n" +
                 "É uma lista linear que agrupa elementos, formando uma coleção dos mesmos, de forma empilhada. Pode\n" +
                 "ser entendida como uma pilha de pratos, daí seu nome, onde cada prato é colocado acima de outro e,\n" +
                 "convenientemente, a retirada acontece pelo último (anteriormente inserido), alternando quem está\n" +
@@ -33,6 +45,7 @@ public class Interface_pilha_array {
         System.out.println("O que ela pode fazer ?\n" +
                 "Este tipo abstrato de dado lhe permite: pegar o valor armazenado em um elemento da coleção, alterar\n" +
                 "este valor, removê-lo, tanto como adicionar um novo.\n");
+        System.out.println();
 
         boolean alternador = true;
         while (alternador) {
@@ -79,9 +92,5 @@ public class Interface_pilha_array {
                     break;
             }
         }
-
     }
-
-
-
 }

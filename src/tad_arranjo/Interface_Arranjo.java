@@ -4,6 +4,8 @@ import java.util.Scanner;
 import interfaces.*;
 import tad_arranjo.classes.ArrayIndexList;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_Arranjo {
     Interface opcoes = new Interface();
 
@@ -14,9 +16,17 @@ public class Interface_Arranjo {
                 "Inserir",
                 "Remover",
                 "Consultar",
-
         };
-        //texto
+
+        // Exibe titulo
+        titulo2("██      ██ ███████ ████████  █████       █████  ██████  ██████   █████  ███    ██      ██  ██████  \n" +
+                "██      ██ ██         ██    ██   ██     ██   ██ ██   ██ ██   ██ ██   ██ ████   ██      ██ ██    ██ \n" +
+                "██      ██ ███████    ██    ███████     ███████ ██████  ██████  ███████ ██ ██  ██      ██ ██    ██ \n" +
+                "██      ██      ██    ██    ██   ██     ██   ██ ██   ██ ██   ██ ██   ██ ██  ██ ██ ██   ██ ██    ██ \n" +
+                "███████ ██ ███████    ██    ██   ██     ██   ██ ██   ██ ██   ██ ██   ██ ██   ████  █████   ██████  ");
+
+
+        // Explicação da estrutura
         System.out.println("O que é:\n" +
                             "Uma lista arranjo (também chamado de vetor) como seu nome já sugere, é o “casamento” entre listas e\n" +
                             "arranjos, trazendo os diferentes benefícios de ambos em um único TAD. Esta é uma estrutura de dados\n" +
@@ -35,7 +45,8 @@ public class Interface_Arranjo {
         System.out.println("O que pode fazer?\n" +
                             "Este tipo abstrato de dado lhe permite: pegar o valor armazenado em um elemento da coleção, alterar\n" +
                             "este valor, removê-lo, tanto como adicionar um novo.");
-                    //abertura do menu
+
+        //abertura do menu
         boolean alternador = true;
         while (alternador) {
             Scanner entrada = new Scanner(System.in);

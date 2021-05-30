@@ -6,14 +6,14 @@ import tad_arvore_binaria.interfaces.Position;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_arvore_binaria {
 
     Interface opcoes = new Interface();
 
     public void arvoreBinaria(){
-
         LinkedBinaryTree<Integer> ArvoreBinaria = new LinkedBinaryTree<Integer>();
-
         String[] funcionalidades = {
                 "Sair",
                 "Inserir",
@@ -21,6 +21,13 @@ public class Interface_arvore_binaria {
                 "desenhar arvore",
 
         };
+
+        //Exibe título
+        titulo2(" █████  ██████  ██    ██  ██████  ██████  ███████     ██████  ██ ███    ██  █████  ██████  ██  █████  \n" +
+                "██   ██ ██   ██ ██    ██ ██    ██ ██   ██ ██          ██   ██ ██ ████   ██ ██   ██ ██   ██ ██ ██   ██ \n" +
+                "███████ ██████  ██    ██ ██    ██ ██████  █████       ██████  ██ ██ ██  ██ ███████ ██████  ██ ███████ \n" +
+                "██   ██ ██   ██  ██  ██  ██    ██ ██   ██ ██          ██   ██ ██ ██  ██ ██ ██   ██ ██   ██ ██ ██   ██ \n" +
+                "██   ██ ██   ██   ████    ██████  ██   ██ ███████     ██████  ██ ██   ████ ██   ██ ██   ██ ██ ██   ██ ");
 
         System.out.println("Apresentação:\n" +
                 "Árvores são as estruturas ideais para representar hierarquias e sua implementação, geralmente, se\n" +

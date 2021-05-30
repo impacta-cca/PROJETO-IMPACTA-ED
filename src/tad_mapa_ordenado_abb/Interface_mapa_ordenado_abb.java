@@ -7,6 +7,8 @@ import tad_mapa_ordenado_abb.classes.BinarySearchTree;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_mapa_ordenado_abb {
 
     public void mapaOrdenadoABB(){
@@ -21,10 +23,17 @@ public class Interface_mapa_ordenado_abb {
 
         };
 
+        //Exibe título
+        titulo2("███    ███  █████  ██████   █████       ██████  ██████  ██████  ███████ ███    ██  █████  ██████   ██████       ██  █████  ██████  ██████  ██  \n" +
+                "████  ████ ██   ██ ██   ██ ██   ██     ██    ██ ██   ██ ██   ██ ██      ████   ██ ██   ██ ██   ██ ██    ██     ██  ██   ██ ██   ██ ██   ██  ██ \n" +
+                "██ ████ ██ ███████ ██████  ███████     ██    ██ ██████  ██   ██ █████   ██ ██  ██ ███████ ██   ██ ██    ██     ██  ███████ ██████  ██████   ██ \n" +
+                "██  ██  ██ ██   ██ ██      ██   ██     ██    ██ ██   ██ ██   ██ ██      ██  ██ ██ ██   ██ ██   ██ ██    ██     ██  ██   ██ ██   ██ ██   ██  ██ \n" +
+                "██      ██ ██   ██ ██      ██   ██      ██████  ██   ██ ██████  ███████ ██   ████ ██   ██ ██████   ██████       ██ ██   ██ ██████  ██████  ██  ");
+
         System.out.println("Apresentação:\n" +
                 "Este tipo é baseado no TAD Mapa comum, seu diferencial é que é organizado estrategicamente a favor\n" +
                 "de uma pesquisa mais eficiente por seus elementos. Esse tipo de árvore é binária completa, então cada\n" +
-                "elemento terá de possuir estritamente 0 ou 2 filhos, utilizando um “placeholder” se necessário." +
+                "elemento terá de possuir estritamente 0 ou 2 filhos, utilizando um “placeholder” se necessário.\n" +
                 "\n" +
                 "Como funciona ?\n" +
                 "As entradas são controladas de forma a organizar automaticamente a árvore: a partir da raiz (primeiro\n" +

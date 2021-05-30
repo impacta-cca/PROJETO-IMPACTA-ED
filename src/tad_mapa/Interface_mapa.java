@@ -6,11 +6,11 @@ import tad_mapa.classes.HashTableMap;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_mapa {
     Interface opcoes = new Interface();
-
     public void mapa(){
-
         HashTableMap<Integer,Integer> Mapa = new HashTableMap<Integer, Integer>();
 
         String[] funcionalidades = {
@@ -21,6 +21,15 @@ public class Interface_mapa {
 
         };
 
+        //Exibe titulo
+        titulo2("                                                        ███    ███  █████  ██████   █████                                                          \n" +
+                "                                                        ████  ████ ██   ██ ██   ██ ██   ██                                                         \n" +
+                "                                                        ██ ████ ██ ███████ ██████  ███████                                                         \n" +
+                "                                                        ██  ██  ██ ██   ██ ██      ██   ██                                                         \n" +
+                "                                                        ██      ██ ██   ██ ██      ██   ██                                                         ");
+
+
+        // Exibe explicação da estrutura
         System.out.println("\n" +
                 "Apresentação:\n" +
                 "O TAD Mapa é uma estrutura de lista, onde os elementos serão compostos por chaves que permitirão que\n" +
@@ -94,7 +103,5 @@ public class Interface_mapa {
                     break;
             }
         }
-
     }
-
 }

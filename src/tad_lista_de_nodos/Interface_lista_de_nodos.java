@@ -8,6 +8,8 @@ import tad_lista_de_nodos.interfaces.PositionList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_lista_de_nodos {
     Interface opcoes = new Interface();
 
@@ -22,6 +24,12 @@ public class Interface_lista_de_nodos {
 
         };
 
+        // Exibe titulo
+        titulo2("██      ██ ███████ ████████  █████      ██████  ███████     ███    ██  ██████  ██████   ██████  ███████ \n" +
+                "██      ██ ██         ██    ██   ██     ██   ██ ██          ████   ██ ██    ██ ██   ██ ██    ██ ██      \n" +
+                "██      ██ ███████    ██    ███████     ██   ██ █████       ██ ██  ██ ██    ██ ██   ██ ██    ██ ███████ \n" +
+                "██      ██      ██    ██    ██   ██     ██   ██ ██          ██  ██ ██ ██    ██ ██   ██ ██    ██      ██ \n" +
+                "███████ ██ ███████    ██    ██   ██     ██████  ███████     ██   ████  ██████  ██████   ██████  ███████ ");
 
         System.out.println("Apresentação:\n" +
                         "A lista de nodos é um TAD que lhe concede uma forma alternativa aos índices de se referenciar a\n" +

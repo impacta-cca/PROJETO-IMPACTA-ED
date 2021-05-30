@@ -5,6 +5,8 @@ import tad_pilha_LSE.classes.NodeStack;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_pilha_LSE {
     Interface opcoes = new Interface();
 
@@ -16,8 +18,16 @@ public class Interface_pilha_LSE {
                 "Remover",
                 "Imprimir",
                 "consultar número no topo da pilha"
-
         };
+
+        // Exibe título
+        titulo2("██████  ██ ██      ██   ██  █████       ██ ██      ███████ ███████ ██  \n" +
+                "██   ██ ██ ██      ██   ██ ██   ██     ██  ██      ██      ██       ██ \n" +
+                "██████  ██ ██      ███████ ███████     ██  ██      ███████ █████    ██ \n" +
+                "██      ██ ██      ██   ██ ██   ██     ██  ██           ██ ██       ██ \n" +
+                "██      ██ ███████ ██   ██ ██   ██      ██ ███████ ███████ ███████ ██  ");
+
+        // Explicação da estrutura
         System.out.println("Apresentação:\n" +
                             "É uma lista linear que agrupa elementos, formando uma coleção dos mesmos, de forma empilhada. Pode\n" +
                             "ser entendida como uma pilha de pratos, daí seu nome, onde cada prato é colocado acima de outro e,\n" +

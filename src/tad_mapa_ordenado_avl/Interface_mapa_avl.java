@@ -6,6 +6,8 @@ import tad_mapa_ordenado_avl.classes.AVLTreeMap;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_mapa_avl {
 
     public void mapaOrdenadoAVL(){
@@ -20,6 +22,13 @@ public class Interface_mapa_avl {
 
         };
 
+
+        //Exibe titulo
+        titulo2("███    ███  █████  ██████   █████       ██████  ██████  ██████  ███████ ███    ██  █████  ██████   ██████       ██  █████  ██    ██ ██      ██  \n" +
+                "████  ████ ██   ██ ██   ██ ██   ██     ██    ██ ██   ██ ██   ██ ██      ████   ██ ██   ██ ██   ██ ██    ██     ██  ██   ██ ██    ██ ██       ██ \n" +
+                "██ ████ ██ ███████ ██████  ███████     ██    ██ ██████  ██   ██ █████   ██ ██  ██ ███████ ██   ██ ██    ██     ██  ███████ ██    ██ ██       ██ \n" +
+                "██  ██  ██ ██   ██ ██      ██   ██     ██    ██ ██   ██ ██   ██ ██      ██  ██ ██ ██   ██ ██   ██ ██    ██     ██  ██   ██  ██  ██  ██       ██ \n" +
+                "██      ██ ██   ██ ██      ██   ██      ██████  ██   ██ ██████  ███████ ██   ████ ██   ██ ██████   ██████       ██ ██   ██   ████   ███████ ██ ");
         System.out.println("Apresentação: \n" +
                 "Este TAD é semelhante ao TAD Mapa ABB, contém o mesmo critério de organização e pesquisa, sendo também\n" +
                 "estritamente uma árvore binária completa. No entanto, este tipo acrescenta uma regra a mais para\n" +

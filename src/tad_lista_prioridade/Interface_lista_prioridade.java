@@ -6,11 +6,11 @@ import tad_lista_prioridade.classes.SortedListPriorityQueue;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_lista_prioridade {
     Interface opcoes = new Interface();
-
     public void listaPrioridade(){
-
         SortedListPriorityQueue<Integer,Integer> ListaPrioridade = new SortedListPriorityQueue<Integer, Integer>();
 
         String[] funcionalidades = {
@@ -18,10 +18,17 @@ public class Interface_lista_prioridade {
                 "Inserir",
                 "Remover",
                 "imprimir",
-
         };
 
+        // Exibe título
+        titulo2("███████ ██ ██       █████      ██████  ███████     ██████  ██████  ██  ██████  ██████  ██ ██████   █████  ██████  ███████ \n" +
+                "██      ██ ██      ██   ██     ██   ██ ██          ██   ██ ██   ██ ██ ██    ██ ██   ██ ██ ██   ██ ██   ██ ██   ██ ██      \n" +
+                "█████   ██ ██      ███████     ██   ██ █████       ██████  ██████  ██ ██    ██ ██████  ██ ██   ██ ███████ ██   ██ █████   \n" +
+                "██      ██ ██      ██   ██     ██   ██ ██          ██      ██   ██ ██ ██    ██ ██   ██ ██ ██   ██ ██   ██ ██   ██ ██      \n" +
+                "██      ██ ███████ ██   ██     ██████  ███████     ██      ██   ██ ██  ██████  ██   ██ ██ ██████  ██   ██ ██████  ███████ ");
 
+
+        // Exibe explicação da estrutura
         System.out.println("Apresentação:\n" +
                 "Este tipo é uma especialização do TAD fila, que assim como tal, armazena uma coleção de elementos,\n" +
                 "porém sua sequencialidade dá-se através não por ordem de inserção, mas sim pelo nível de preferência\n" +
@@ -76,9 +83,6 @@ public class Interface_lista_prioridade {
                     break;
                 case 2:
                     System.out.println("item com menor chave removido da lista: "+ListaPrioridade.removeMin().getValue());
-
-
-
                     break;
                 case 3: //imprimir
                     System.out.println(ListaPrioridade.toString());
@@ -86,8 +90,5 @@ public class Interface_lista_prioridade {
                     break;
             }
         }
-
     }
-
-
 }

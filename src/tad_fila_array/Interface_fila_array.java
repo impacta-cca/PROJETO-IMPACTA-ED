@@ -5,10 +5,20 @@ import tad_fila_array.classes.ArrayQueue;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_fila_array {
     Interface opcoes = new Interface();
 
     public void fila(){
+        // Exibe título
+        titulo2("███████ ██ ██       █████       ██  █████  ██████  ██████   █████  ██    ██ ██  \n" +
+                "██      ██ ██      ██   ██     ██  ██   ██ ██   ██ ██   ██ ██   ██  ██  ██   ██ \n" +
+                "█████   ██ ██      ███████     ██  ███████ ██████  ██████  ███████   ████    ██ \n" +
+                "██      ██ ██      ██   ██     ██  ██   ██ ██   ██ ██   ██ ██   ██    ██     ██ \n" +
+                "██      ██ ███████ ██   ██      ██ ██   ██ ██   ██ ██   ██ ██   ██    ██    ██  ");
+
+        // Pede tamanho da fila para iniciar
         System.out.println("Digite o tamanho da fila: ");
         Scanner entrada1 = new Scanner(System.in);
         int tamanho = entrada1.nextInt();
@@ -19,9 +29,9 @@ public class Interface_fila_array {
                 "Inserir",
                 "Remover",
                 "Consultar",
-
         };
 
+        // Exibe informações da estrutura
         System.out.println("Apresentação:\n" +
                            "A fila é um tipo abstrato de dados em que define-se uma coleção de elementos em sequência, como o\n" +
                            "nome sugere, porém seu acesso, assim como inserção e remoção de objetos é dada de forma restrita.");

@@ -6,6 +6,8 @@ import tad_mapa.classes.HashTableMap;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_dicionario {
 
 
@@ -21,6 +23,13 @@ public class Interface_dicionario {
                 "imprimir",
 
         };
+
+        //Exibe titulo
+        titulo2("                                        ██████  ██  ██████ ██  ██████  ███    ██  █████  ██████  ██  ██████  \n" +
+                "                                        ██   ██ ██ ██      ██ ██    ██ ████   ██ ██   ██ ██   ██ ██ ██    ██ \n" +
+                "                                        ██   ██ ██ ██      ██ ██    ██ ██ ██  ██ ███████ ██████  ██ ██    ██ \n" +
+                "                                        ██   ██ ██ ██      ██ ██    ██ ██  ██ ██ ██   ██ ██   ██ ██ ██    ██ \n" +
+                "                                        ██████  ██  ██████ ██  ██████  ██   ████ ██   ██ ██   ██ ██  ██████  ");
 
         System.out.println("Apresentação:\n" +
                 "Assemelhando-se à estrutura de dados Mapa, os dicionários formam uma coleção de itens, de qualquer\n" +
@@ -42,7 +51,6 @@ public class Interface_dicionario {
                 "- size: retorna a quantidade de itens no dicionário.\n" +
                 "\n" +
                 "- isEmpty: testa se a estrutura está vazia (true) ou não (false), retornando um valor booleano.\n" +
-                "\n" +
                 "\n" +
                 "- get(k): retorna k caso faça parte do dicionário, quando não faz, retorna null.\n" +
                 "\n" +
@@ -84,6 +92,5 @@ public class Interface_dicionario {
                     break;
             }
         }
-
     }
 }

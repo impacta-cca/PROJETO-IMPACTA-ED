@@ -8,19 +8,25 @@ import tad_arvore_generica.classes.NodePositionList;
 import tad_arvore_generica.classes.TreeNode;
 import tad_arvore_generica.interfaces.*;
 
+import static interfaces.Interface.titulo2;
+
 public class  Interface_arvore_generica {
     Interface opcoes = new Interface();
-
     public void arvoreGenerica(){
-
         LinkedTree<Integer> ArvoreGenerica = new LinkedTree<Integer>();
 
         String[] funcionalidadesArranjo = {
                 "Sair",
                 "criar arvore de exemplo",
                 "desenhar arvore",
-
         };
+
+        // Exibe título
+        titulo2(" █████  ██████  ██    ██  ██████  ██████  ███████      ██████  ███████ ███    ██ ███████ ██████  ██  ██████  █████  \n" +
+                "██   ██ ██   ██ ██    ██ ██    ██ ██   ██ ██          ██       ██      ████   ██ ██      ██   ██ ██ ██      ██   ██ \n" +
+                "███████ ██████  ██    ██ ██    ██ ██████  █████       ██   ███ █████   ██ ██  ██ █████   ██████  ██ ██      ███████ \n" +
+                "██   ██ ██   ██  ██  ██  ██    ██ ██   ██ ██          ██    ██ ██      ██  ██ ██ ██      ██   ██ ██ ██      ██   ██ \n" +
+                "██   ██ ██   ██   ████    ██████  ██   ██ ███████      ██████  ███████ ██   ████ ███████ ██   ██ ██  ██████ ██   ██ ");
 
         System.out.println("Apresentação:\n" +
                 "É o tipo mais genérico quando se trata da gama de TAD árvore, pois permite mais controle e\n" +

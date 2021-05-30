@@ -5,13 +5,13 @@ import tad_fila_LSE.classes.NodeQueue;
 
 import java.util.Scanner;
 
+import static interfaces.Interface.titulo2;
+
 public class Interface_fila_LSE {
     Interface opcoes = new Interface();
 
     public void fila() {
-       
         NodeQueue<Integer> fila = new NodeQueue<Integer>();
-
         String[] funcionalidadesArranjo = {
                 "Sair",
                 "Inserir",
@@ -19,6 +19,13 @@ public class Interface_fila_LSE {
                 "Consultar",
 
         };
+
+        // Exibe título
+        titulo2("███████ ██ ██       █████       ██ ██      ███████ ███████ ██  \n" +
+                "██      ██ ██      ██   ██     ██  ██      ██      ██       ██ \n" +
+                "█████   ██ ██      ███████     ██  ██      ███████ █████    ██ \n" +
+                "██      ██ ██      ██   ██     ██  ██           ██ ██       ██ \n" +
+                "██      ██ ███████ ██   ██      ██ ███████ ███████ ███████ ██  ");
 
         System.out.println("Apresentação:\n" +
                 "A fila é um tipo abstrato de dados em que define-se uma coleção de elementos em sequência, como o\n" +
@@ -36,6 +43,7 @@ public class Interface_fila_LSE {
                 "Este tipo abstrato de dado permite: adicionar novos valores ao fim da fila e removê-los ou\n" +
                 "acessá-los através do começo da sequência. Também é possível consultar seu tamanho ou saber se a\n" +
                 "fila está vazia.");
+        System.out.println();
 
         System.out.println("Como faz cada função ?\n" +
                 "- enqueue(x): faz a inserção do objeto x ao final da fila. \n" +

@@ -1,6 +1,6 @@
 package principal;
 import interfaces.Interface;
-import  tad_arranjo.Interface_Arranjo;
+import tad_arranjo.Interface_Arranjo;
 import tad_dicionario.Interface_dicionario;
 import tad_mapa.Interface_mapa;
 import tad_mapa_ordenado_abb.Interface_mapa_ordenado_abb;
@@ -14,6 +14,9 @@ import tad_arvore_generica.Interface_arvore_generica;
 import tad_arvore_binaria.Interface_arvore_binaria;
 import tad_lista_prioridade.Interface_lista_prioridade;
 
+import static interfaces.Interface.titulo;
+import static interfaces.Interface.titulo2;
+
 public class Main {
     public static void main(String[] args) {
 	    escolheEstrutura();
@@ -22,20 +25,20 @@ public class Main {
         // Cria lista de estruturas para selecionar no menu
     	String[] estruturas = {
                 "Sair",
-                "TAD-Lista Arranjo", //OK
-                "TAD-Pilha-Array", //OK
-                "TAD-Pilha-LSE", //OK
-                "TAD-Fila - Array", //OK
-                "TAD-Fila - LSE", //OK
-                "TAD-Lista de Nodos", // falta corrigir a remoção por busca
-                "TAD-Árvore Genérica", // OK , necessario definir como será inserido
-                "TAD-Árvore Binária", // OK, necessario inserir como será inserido
-                "TAD-Fila de Prioridade", //OK
-                "TAD-Mapa", //OK
-                "TAD-Dicionário", //OK
-                "TAD-Mapa Ordenado – ABB", //OK
-                "TAD-Mapa Ordenado – AVL", //OK
-                "TAD-Grafos"
+                "Lista Arranjo", //OK
+                "Pilha (Array)", //OK
+                "Pilha (LSE)", //OK
+                "Fila (Array)", //OK
+                "Fila (LSE)", //OK
+                "Lista de Nodos", // falta corrigir a remoção por busca
+                "Árvore Genérica", // OK , necessario definir como será inserido
+                "Árvore Binária", // OK, necessario inserir como será inserido
+                "Fila de Prioridade", //OK
+                "Mapa", //OK
+                "Dicionário", //OK
+                "Mapa Ordenado (ABB)", //OK
+                "Mapa Ordenado (AVL)", //OK
+                "Grafos"
         };
 
         Interface opcoes = new Interface();
@@ -52,10 +55,23 @@ public class Main {
         Interface_dicionario IDict = new Interface_dicionario();
         Interface_mapa_ordenado_abb IMapaABB = new Interface_mapa_ordenado_abb();
         Interface_mapa_avl IMapaAVl = new Interface_mapa_avl();
+
+
+        //Chama menu para escolher estrutura de dados para exibir informações
         while (true) {
+            titulo2("███████ ███████ ████████ ██████  ██    ██ ████████ ██    ██ ██████   █████      ██████  ███████     ██████   █████  ██████   ██████  ███████ \n" +
+                    "██      ██         ██    ██   ██ ██    ██    ██    ██    ██ ██   ██ ██   ██     ██   ██ ██          ██   ██ ██   ██ ██   ██ ██    ██ ██      \n" +
+                    "█████   ███████    ██    ██████  ██    ██    ██    ██    ██ ██████  ███████     ██   ██ █████       ██   ██ ███████ ██   ██ ██    ██ ███████ \n" +
+                    "██           ██    ██    ██   ██ ██    ██    ██    ██    ██ ██   ██ ██   ██     ██   ██ ██          ██   ██ ██   ██ ██   ██ ██    ██      ██ \n" +
+                    "███████ ███████    ██    ██   ██  ██████     ██     ██████  ██   ██ ██   ██     ██████  ███████     ██████  ██   ██ ██████   ██████  ███████");
             int opcaoEscolhida = opcoes.menu(estruturas);
             switch (opcaoEscolhida) {
                 case 0:
+                    titulo2("            ███████ ██ ███    ███     ██████   ██████      ██████  ██████   ██████   ██████  ██████   █████  ███    ███  █████              \n" +
+                            "            ██      ██ ████  ████     ██   ██ ██    ██     ██   ██ ██   ██ ██    ██ ██       ██   ██ ██   ██ ████  ████ ██   ██             \n" +
+                            "            █████   ██ ██ ████ ██     ██   ██ ██    ██     ██████  ██████  ██    ██ ██   ███ ██████  ███████ ██ ████ ██ ███████             \n" +
+                            "            ██      ██ ██  ██  ██     ██   ██ ██    ██     ██      ██   ██ ██    ██ ██    ██ ██   ██ ██   ██ ██  ██  ██ ██   ██             \n" +
+                            "            ██      ██ ██      ██     ██████   ██████      ██      ██   ██  ██████   ██████  ██   ██ ██   ██ ██      ██ ██   ██             ");
                     System.exit(-1);
                     break;
                 case 1: // TAD-Lista Arranjo
@@ -96,7 +112,6 @@ public class Main {
                     break;
                 case 13: // TAD-Mapa Ordenado – AVL
                     IMapaAVl.mapaOrdenadoAVL();
-
                     break;
                 case 14: // TAD-Grafos
                     break;
