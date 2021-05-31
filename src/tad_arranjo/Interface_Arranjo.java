@@ -8,9 +8,9 @@ import static interfaces.Interface.titulo2;
 
 public class Interface_Arranjo {
     Interface opcoes = new Interface();
-
+    ArrayIndexList<Integer> arranjo = new ArrayIndexList<Integer>();
     public void arranjo() {
-        ArrayIndexList<Integer> arranjo = new ArrayIndexList<Integer>();
+
         String[] funcionalidadesArranjo = {
                 "Sair",
                 "Inserir",
@@ -70,10 +70,14 @@ public class Interface_Arranjo {
                         indice = entrada.nextInt()-1;
                         try{
                             arranjo.get(indice);
-                            System.out.println("Já possui um número nessa posição");
+                            System.out.println("posição invalida");
                             arranjo();
-                        }catch (Exception e){
-                            arranjo.add(indice,inserir);
+                        }catch (Exception e) {
+                            if (indice < 0) {
+                                System.out.println("digite o indice a partir do número 1");
+                            } else {
+                                arranjo.add(indice, inserir);
+                            }
                         }
 
 
