@@ -2,6 +2,7 @@ package tad_pilha_array;
 
 import interfaces.Interface;
 import tad_pilha_array.classes.ArrayStack;
+import tad_pilha_array.exception.EmptyStackException;
 
 import java.util.Scanner;
 
@@ -9,9 +10,10 @@ import static interfaces.Interface.titulo2;
 
 public class Interface_pilha_array {
     Interface opcoes = new Interface();
+    ArrayStack<Integer> pilha = new ArrayStack<Integer>();
 
     public  void pilha(){
-        ArrayStack<Integer> pilha = new ArrayStack<Integer>();
+
         String[] funcionalidadesArranjo = {
                 "Sair",
                 "Inserir",
@@ -74,21 +76,33 @@ public class Interface_pilha_array {
                             "Esse método faz a remoção do último elemento da pilha (no topo) e o retorna. Se a pilha estiver\n" +
                             "vazia, ocorre erro.\n");
 
-                    System.out.println("numero removido da pilha: "+pilha.pop());
+                    try {
+                        System.out.println("numero removido da pilha: " + pilha.pop());
+                    }catch (EmptyStackException e){
+                        System.out.println("não é possivel remover na pilha pq ela está vazia");
+                        this.pilha();
+                    }
 
                     //desempilha o item do topo da pilha e retorna ele no print
                     break;
                 case 3: //imprimir
+
                     System.out.println(pilha.toString());
                     // chamar metodo para imprimir importado do TAD
                     break;
                 case 4: //top
+
                     System.out.println("top:\n" +
                             "Esse método verifica qual elemento está no topo da pilha e o retorna. Assim como o pop, gera erro\n" +
                             "caso a lista esteja vazia.\n");
+                    try {
 
-                    System.out.println("número que está no topo da pilha: "+pilha.top());
-                    //printa o item que está no topo da pilha
+                        System.out.println("número que está no topo da pilha: " + pilha.top());
+                        //printa o item que está no topo da pilha
+                    }
+                    catch (EmptyStackException e){
+                        System.out.println("Não é possivel consultar o topo da lista pois a lista está vazia");
+                    }
                     break;
             }
         }

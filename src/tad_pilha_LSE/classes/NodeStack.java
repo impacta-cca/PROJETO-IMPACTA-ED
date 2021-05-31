@@ -80,14 +80,13 @@ public class NodeStack<E> {
 			s += p.getElement();
 
 			s += ", ";
-
 			p = p.getNext();
 
 		}
 
 		if (s.length() > 1)
-
 			s = s.substring(0, s.length() - 2);
+
 
 		return s + "]";
 
