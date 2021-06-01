@@ -98,8 +98,12 @@ public class Interface_mapa {
 
                     break;
                 case 3: //imprimir
-                    System.out.println(Mapa.toString());
-                    // chamar metodo para imprimir importado do TAD
+                    if(Mapa.isEmpty()){
+                        System.out.println("ERRO: O mapa está vazio.");
+                    }else {
+                        System.out.println(Mapa.toString());
+                        // chamar metodo para imprimir importado do TAD
+                    }
                     break;
             }
         }

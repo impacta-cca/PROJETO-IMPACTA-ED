@@ -2,6 +2,7 @@ package tad_fila_array;
 
 import interfaces.Interface;
 import tad_fila_array.classes.ArrayQueue;
+import tad_fila_array.exception.EmptyQueueException;
 
 import java.util.Scanner;
 
@@ -28,7 +29,7 @@ public class Interface_fila_array {
                 "Sair",
                 "Inserir",
                 "Remover",
-                "Consultar",
+                "Imprimir fila",
         };
 
         // Exibe informações da estrutura
@@ -83,9 +84,14 @@ public class Interface_fila_array {
                 case 2: //remover
                     System.out.println("dequeue():\n" +
                                        "faz a remoção do primeiro elemento da fila e o retorna. Se a fila estiver vazia, ocorre erro.");
-                    
-                    System.out.println("o número que foi removido da fila é o "+fila.dequeue());
-
+                    System.out.println();
+                    try {
+                        System.out.println("o número que foi removido da fila é o " + fila.dequeue());
+                        System.out.println();
+                    }catch (EmptyQueueException e){
+                        System.out.println("ERRO: Não é possivel remover, fila está vazia.");
+                        System.out.println();
+                    }
                    //chama o metodo dequeue para retirar o primeiro numero da fila
                     break;
                 case 3: //imprimir

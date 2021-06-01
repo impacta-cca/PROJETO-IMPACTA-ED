@@ -50,7 +50,6 @@ public class Interface_Arranjo {
         //abertura do menu
         boolean alternador = true;
         while (alternador) {
-
                 Scanner entrada = new Scanner(System.in);
                 int op = opcoes.menu(funcionalidadesArranjo);
                 int indice = 0;
@@ -64,24 +63,16 @@ public class Interface_Arranjo {
                                 "esse método insere um elemento novo na coleção, na posição do índice informado. Caso o usuário" +
                                 "\nqueira inserir um elemento em uma posição já ocupada, o novo elemento assume a posição desejada e" +
                                 "\nempurra seus posteriores para uma posição adiante.");
-                        System.out.println("Digite o numero que será inserido");
+                        System.out.println("Digite o numero que será inserido: ");
                         inserir = entrada.nextInt();
-                        System.out.println("Digite a posição que será inserido");
+                        System.out.println("Digite a posição que será inserido:  ");
                         indice = entrada.nextInt()-1;
                         try{
-                            arranjo.get(indice);
-                            System.out.println("posição invalida");
-                            arranjo();
+                            arranjo.add(indice, inserir);
                         }catch (Exception e) {
-                            if (indice < 0) {
-                                System.out.println("digite o indice a partir do número 1");
-                            } else {
-                                arranjo.add(indice, inserir);
-                            }
+                            System.out.println("ERRO: Índice digitado menor ou igual a 0 ou é maior que 16.");
+
                         }
-
-
-
                         //chamar metodo do TAD para inserção com o parametro a variavel 'inserir'
                         break;
                     case 2: //remover
@@ -90,8 +81,12 @@ public class Interface_Arranjo {
                                 "esse método remove da coleção o elemento pertencente ao índice informado. Caso o usuário remova um\n" +
                                 "elemento diferente do último, os elementos anteriores são deslocados para ocupar a posição vazia, puxando-os para uma posição anterior.\n");
                         System.out.println("Digite a posição do numero que será removido");
-                        indice = entrada.nextInt();
-                        arranjo.remove(indice);
+                        indice = entrada.nextInt()-1;
+                        try {
+                            arranjo.remove(indice);
+                        }catch (Exception e){
+                            System.out.println("ERRO: Índice digitado menor ou igual a 0 ou é maior que 16.");
+                        }
                         //chamar metodo do TAD para inserção com o parametro a variavel 'remover'
                         break;
                     case 3: //imprimir
@@ -116,10 +111,6 @@ public class Interface_Arranjo {
                         System.out.println("O número não foi encontrado no arranjo");
                         }
                 }
-
-
-
         }
-
     }
 }

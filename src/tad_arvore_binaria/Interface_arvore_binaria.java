@@ -94,20 +94,17 @@ public class Interface_arvore_binaria {
                     alternador = false;
                     break;
                 case 1: // caso de inserção na arvore binaria( ainda necessário definir como será feita a inserção)
-                    System.out.println("Digite o numero que será inserido para a raiz da árvore? ");
-                    inserir = entrada.nextInt();
                     if(ArvoreBinaria.isEmpty()){
+                        System.out.println("Digite o número para a raiz da árvore: ");
+                        inserir = entrada.nextInt();
                         ArvoreBinaria.addRoot(inserir);
-                        System.out.println("O número "+inserir+" é raiz da árvore");
+                        System.out.println("O número " + inserir + " é raiz da árvore");
                     }
                     else{
+                        System.out.println("Digite o numero que será inserido na árvore: ");
+                        inserir = entrada.nextInt();
                         ArvoreBinaria.inserirnaArvore(inserir, ArvoreBinaria.root(), ArvoreBinaria);
-
-
-
-
                     }
-
                     break;
                 case 2:
 

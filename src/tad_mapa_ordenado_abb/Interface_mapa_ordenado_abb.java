@@ -93,8 +93,8 @@ public class Interface_mapa_ordenado_abb {
 
                     break;
                 case 3: //imprimir
-                    System.out.println(MapaABB.keySet().toString());
-                    System.out.println(MapaABB.values().toString());
+                    System.out.println("Chave: \t"+MapaABB.keySet().toString());
+                    System.out.println("Valor: \t"+MapaABB.values().toString());
                     // chamar metodo para imprimir importado do TAD
                     break;
             }

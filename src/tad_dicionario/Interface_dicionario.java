@@ -1,6 +1,7 @@
 package tad_dicionario;
 
 import interfaces.Interface;
+import tad_dicionario.classes.HashTableMultiMap;
 import tad_mapa.classes.HashTableMap;
 
 
@@ -15,7 +16,7 @@ public class Interface_dicionario {
 
     public void dicionario(){
 
-        HashTableMap<Integer, Integer> Dicionario = new HashTableMap<Integer,Integer>();
+        HashTableMultiMap<Integer, Integer> Dicionario = new HashTableMultiMap<Integer,Integer>();
         String[] funcionalidades = {
                 "Sair",
                 "Inserir",
@@ -80,14 +81,15 @@ public class Interface_dicionario {
                     key = entrada.nextInt();
 
                     Dicionario.put(key, inserir);
+
                     break;
                 case 2:
                     System.out.println("Digite a chave do numero que será removido: ");
                     int remover = entrada.nextInt();
-                    System.out.println("O número "+Dicionario.remove(remover)+" foi removido com sucesso");
+                    System.out.println("O número " + Dicionario.remove(Dicionario.get(remover)) + " foi removido com sucesso");
                     break;
                 case 3: //imprimir
-                    System.out.println(Dicionario.toString());
+                    System.out.println(Dicionario.entrySet().toString());
                     // chamar metodo para imprimir importado do TAD
                     break;
             }

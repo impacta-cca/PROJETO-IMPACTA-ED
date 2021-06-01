@@ -640,7 +640,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
 		String[][] desenho = new String[T.height1(T) + 1][posicoes.size()];
 
 		for (String linha[] : desenho) {
-			Arrays.fill(linha, "=");
+			Arrays.fill(linha, "==");
 		}
 
 		int aux = 0;

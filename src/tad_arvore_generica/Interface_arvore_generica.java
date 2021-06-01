@@ -17,8 +17,8 @@ public class  Interface_arvore_generica {
 
         String[] funcionalidadesArranjo = {
                 "Sair",
-                "criar arvore de exemplo",
-                "desenhar arvore",
+                "Criar árvore",
+                "Desenhar árvore"
         };
 
         // Exibe título
@@ -83,13 +83,15 @@ public class  Interface_arvore_generica {
             Scanner entrada = new Scanner(System.in);
             int op = opcoes.menu(funcionalidadesArranjo);
             int inserir = 0;
-            String [ ]lista;
+            String []lista;
             switch (op) {
                 case 0: // Sair
                     alternador = false;
                     break;
                 case 1: // caso de inserção na lista de nodos
-                    ArvoreGenerica = criarArvoreExemplo();
+                    System.out.println("Digite uma sequencia de 10 números separados por espaço: ");
+                    String[] arvore = entrada.nextLine().split(" ");
+                    ArvoreGenerica = criarArvoreExemplo(arvore);
                     System.out.println(ArvoreGenerica.parentheticRepresentation(ArvoreGenerica, ArvoreGenerica.root()));
                     break;
                 case 2: //imprimir
@@ -128,31 +130,22 @@ public class  Interface_arvore_generica {
 
     }
 
-    private LinkedTree<Integer> criarArvoreExemplo(){
+    private LinkedTree<Integer> criarArvoreExemplo(String[] num){
 
         LinkedTree<Integer> TreeExemplo = new LinkedTree<Integer>();
         TreeNode<Integer> raiz,feraiz,fdraiz, fferaiz,ffdraiz;
-        TreeExemplo.addRoot(1);
+        TreeExemplo.addRoot(Integer.parseInt(num[0]));
         raiz =(TreeNode<Integer>) TreeExemplo.root();
         raiz.setChildren(new NodePositionList<Position<Integer>>());
-        feraiz = criarFilho(raiz , 2);
-        fdraiz = criarFilho(raiz,3);
-        fferaiz = criarFilho(feraiz,4);
-        ffdraiz= criarFilho(feraiz,5);
-
-        criarFilho(fdraiz,6);
-        criarFilho(fdraiz,7);
-
-        criarFilho(fferaiz,8);
-        criarFilho(fferaiz,9);
-        criarFilho(ffdraiz,10);
-        criarFilho(ffdraiz,11);
-
+        feraiz = criarFilho(raiz , Integer.parseInt(num[1]));
+        fdraiz = criarFilho(raiz,Integer.parseInt(num[2]));
+        fferaiz = criarFilho(feraiz,Integer.parseInt(num[3]));
+        ffdraiz= criarFilho(feraiz,Integer.parseInt(num[4]));
+        criarFilho(fdraiz,Integer.parseInt(num[5]));
+        criarFilho(fdraiz,Integer.parseInt(num[6]));
+        criarFilho(fferaiz,Integer.parseInt(num[7]));
+        criarFilho(fferaiz,Integer.parseInt(num[8]));
+        criarFilho(ffdraiz,Integer.parseInt(num[9]));
         return  TreeExemplo;
     }
-
-
-
-
-
 }

@@ -87,8 +87,8 @@ public class Interface_mapa_avl {
 
                     break;
                 case 3: //imprimir
-                    System.out.println(MapaAVL.keySet().toString());
-                    System.out.println(MapaAVL.values().toString());
+                    System.out.println("Chave: \t" + MapaAVL.keySet().toString());
+                    System.out.println("Valor: \t" + MapaAVL.values().toString());
                     // chamar metodo para imprimir importado do TAD
                     break;
             }
